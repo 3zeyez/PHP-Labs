@@ -1,4 +1,5 @@
 <?php
+/* --------------------------------first solution-----------------------------------
 // split words into an array of words
 function split_words_of($string) {
   $string .= " ";  // add an extra space to reach the last word
@@ -62,4 +63,21 @@ $words = split_words_of($string);
 $words_without_duplicate = remove_duplicate_words_from($words);
 // call the main funciton 
 join_array_to_string($words_without_duplicate);
+-----------------------------------------------------------------------------------*/
+
+/* -------------------------------second solution-----------------------------------
+function remove_duplicate_words_from($string) {
+  $list_of_words = explode(" ", $string);
+  $list_without_duplicate_words = array_unique($list_of_words);
+  $finalString = implode(" ", $list_without_duplicate_words);
+  return $finalString;
+} ---------------------------------------------------------------------------------*/
+
+// ------------------------------third solution--------------------------------------
+function remove_duplicate_words_from($string) {
+  return implode(" ", array_unique(explode(" ", $string)));
+}  // -------------------------------------------------------------------------------
+
+// final test
+echo remove_duplicate_words_from("Ahmed Aziz Aziz Abbassi Ahmed Abbassi");
 ?>
