@@ -42,8 +42,6 @@
 	  }
 	  return $array_with_out_duplicate_words;
 	}
-	
-	$words_without_duplicate = remove_duplicate_words_from($words);
   
   // join the array of words without duplicate words to a String
   function join_array_to_string($words_without_duplicate) {  
@@ -54,8 +52,12 @@
       echo $string;
   }
   
-  // here initialize the string and the array of words
+  // here initialize the string 
+  $string = "Hello Elzero Web Web Hello School";
+  // here split the string to an array of words
   $words = split_words_of("Hello Elzero Web Web Hello School");
+  // here delete any recurrence of a duplicate word from the array
+  $words_without_duplicate = remove_duplicate_words_from($words);
   // call the main funciton 
   join_array_to_string($words_without_duplicate);
 ?>
