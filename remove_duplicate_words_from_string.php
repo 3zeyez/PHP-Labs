@@ -14,7 +14,7 @@ function split_words_of($string) {
   }
   return $words;
 }
-	
+
 // check if an element is in an array
 function check_in($array, $element) {
   if (count($array) === 0) {
@@ -31,11 +31,12 @@ function check_in($array, $element) {
   return $in;
   }
 }
-	
+
 // remove duplicate words frome an array of words
 function remove_duplicate_words_from($array) {
   $array_with_out_duplicate_words = [];
   for ($i = 0; $i < count($array); $i++) {
+    // check if the element is in the array without duplicate words
     if (!check_in($array_with_out_duplicate_words, $array[$i])) {
       array_push($array_with_out_duplicate_words, $array[$i]);
     }
@@ -45,17 +46,18 @@ function remove_duplicate_words_from($array) {
 
 // join the array of words without duplicate words to a String
 function join_array_to_string($words_without_duplicate) {  
-$string = "";
+  $string = "";
   for ($i = 0; $i < count($words_without_duplicate); $i++) {
     $string .= $words_without_duplicate[$i] . " ";
   }
-  echo $string;
+  // we return a slicing strign 'cause we have an extra space in the end
+  echo substr($string, 0, strlen($string) - 1);
 }
 
 // here initialize the string 
 $string = "Hello Elzero Web Web Hello School";
 // here split the string to an array of words
-$words = split_words_of("Hello Elzero Web Web Hello School");
+$words = split_words_of($string);
 // here delete any recurrence of a duplicate word from the array
 $words_without_duplicate = remove_duplicate_words_from($words);
 // call the main funciton 
