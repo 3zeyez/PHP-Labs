@@ -1,4 +1,5 @@
 <?php
+/*-------------------- first solution ------------------------
 function add_commas_and_underscore($nb) {
   $string = strval($nb);  // convert the number into a string
   // start with the right 3 digits of the number
@@ -12,7 +13,12 @@ function add_commas_and_underscore($nb) {
     }
   }
   return substr($new_string, 1);
-}
+} ------------------------------------------------------------*/
+
+// -------------------- second solution ------------------------
+function add_commas_and_underscore($nb) {
+  return number_format($nb,3 , '_', ',');
+}  // ----------------------------------------------------------
 
 // test cases
 echo add_commas_and_underscore(120) . "\n";  // 120
