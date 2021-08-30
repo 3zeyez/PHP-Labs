@@ -17,7 +17,7 @@ function add_commas_and_underscore($nb) {
 
 // -------------------- second solution ------------------------
 function add_commas_and_underscore($nb) {
-  return number_format($nb,3 , '_', ',');
+  return number_format($nb, 3, '_', ',');
 }  // ----------------------------------------------------------
 
 // test cases
